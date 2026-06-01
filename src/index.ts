@@ -79,7 +79,7 @@ export const enableExperimentalLifecycle = (
     on('after:spec', (spec: Cypress.Spec, _: CypressCommandLine.RunResult) =>
       plugin.saveHar({
         fileName: StringUtils.normalizeName(spec.name, { ext: '.har' }),
-        outDir: config.env.hars_folders ?? '.'
+        outDir: config.expose?.hars_folders ?? '.'
       })
     );
   }
